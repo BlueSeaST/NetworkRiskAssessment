@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'myApp.apps.MyappConfig',
+    # 'myApp.apps.MyappConfig',
     'myApp',
 ]
 
@@ -80,10 +80,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'network_risk_assessment',
-        'USER':'root',
-        'PASSWORD':'root',
-        'HOST':'localhost',
-        'PORT':'3306'
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
@@ -128,3 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'templates/myApp/static')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates/myApp/static')]
+
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_COOKIE_AGE = 60 * 60  # 单位为秒
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # 关闭浏览器使Session失效的功能关闭，否则Session的有效期参数失效
